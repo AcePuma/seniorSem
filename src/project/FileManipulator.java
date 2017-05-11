@@ -238,7 +238,7 @@ public final class FileManipulator {
         //Search through array
         for(int i = 0; i < professors.size(); i++){
             cell = getCellFromProfessorSheet(Column, professors.get(i));
-            if(cell==null)break;
+            if(cell==null)continue;
             //Check to make sure it is not the condition
             if(!(cell.toString().equals(Condition))){
                 eligibleProfessors.add(professors.get(i));
@@ -265,7 +265,7 @@ public final class FileManipulator {
         //Search through array
         for(int i = 0; i < professors.size(); i++){
             cell = getCellFromProfessorSheet(Column, professors.get(i));
-            if(cell==null)break;
+            if(cell==null)continue;
             //Check to make sure it is not the condition
             if(!(cell.toString().equals(thisYear)) && !cell.toString().isEmpty()){
                 if((cell.getNumericCellValue()) < thisYear)
@@ -341,7 +341,7 @@ public final class FileManipulator {
         //Search through professor sheet
         for(int i = 1; i < wb.getSheetAt(0).getPhysicalNumberOfRows(); i++){
             cell = getCellFromProfessorSheet(Column, i);
-            if(cell==null)break;
+            if(cell==null)continue;
             //if cell is equal to condition
             if(cell.toString().equals(Condition)){
                 eligibleProfessors.add(i);
@@ -366,7 +366,7 @@ public final class FileManipulator {
         //Search through professor sheet
         for(int i = 1; i < wb.getSheetAt(0).getPhysicalNumberOfRows(); i++){
             cell = getCellFromProfessorSheet(Column, i);
-            if(cell==null)break;
+            if(cell==null)continue;
             //if cell is equal to this year or less than
             if(!cell.toString().isEmpty() && (cell.getNumericCellValue() <= thisYear)){
 
